@@ -1,0 +1,17 @@
+name: Build_Shared_Actions
+description: Builds and publishes .NET application
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+
+    - name: Build
+      run: dotnet publish Studentregistration -c Release -o publish
+      shell: bash
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-artifact
+        path: publish

@@ -1,5 +1,5 @@
 name: Build_Shared_Actions
-description: Builds and publishes .NET application
+
 
 runs:
   using: "composite"

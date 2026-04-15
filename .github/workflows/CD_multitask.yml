@@ -1,5 +1,3 @@
-
-
 name: CD - Deploy
 
 on:
@@ -10,10 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download All Artifacts
-        #uses: ./.github/actions/Download_Artifact
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-        uses: Jijo2403Organization/GitHub_Task2/.github/actions/Download_Artifact@main
+      - name: Download All Artifacts
+        uses: ./.github/actions/Download_Artifact
 
       - name: Show Files
         run: ls -R

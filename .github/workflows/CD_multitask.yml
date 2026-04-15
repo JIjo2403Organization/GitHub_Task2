@@ -1,0 +1,17 @@
+
+
+name: CD - Deploy
+
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download All Artifacts
+        uses: .github/actions/Download_Artifact@main
+
+      - name: Show Files
+        run: ls -R

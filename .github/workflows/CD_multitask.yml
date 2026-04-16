@@ -2,12 +2,18 @@ name: CD - Deploy
 
 on:
   workflow_call:
+   inputs:
+      version:
+        required: true
+        type: string
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Show Build Version
+        run: echo "Deploying version ${{ inputs.version }}"
     #  - name: Checkout Repository
         #uses: actions/checkout@v4
 

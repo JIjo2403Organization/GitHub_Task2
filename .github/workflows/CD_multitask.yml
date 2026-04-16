@@ -2,7 +2,7 @@ name: CD - Deploy
 
 on:
   workflow_call:
-   inputs:
+    inputs:
       version:
         required: true
         type: string
@@ -13,11 +13,10 @@ jobs:
 
     steps:
       - name: Show Build Version
-        run: echo "Deploying version ${{ inputs.version }}"
-    #  - name: Checkout Repository
-        #uses: actions/checkout@v4
+        run: echo "Deploying version: ${{ inputs.version }}"
 
       - name: Download All Artifacts
         uses: Jijo2403Organization/GitHub_Task2/.github/actions/Download_Artifact@main
+
       - name: Show Files
         run: ls -R
